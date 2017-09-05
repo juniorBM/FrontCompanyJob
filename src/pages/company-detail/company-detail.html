@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Company Detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let c of companies">
+      <ion-card-header>
+        {{c.name}}
+      </ion-card-header>
+
+      <ion-card-content>
+        <p>ID: {{c.id}}</p>
+        <p>E-mail: {{c.email}}</p>
+        <p>Website: {{c.website}}</p>
+      </ion-card-content>
+    </ion-card>
+</ion-content>

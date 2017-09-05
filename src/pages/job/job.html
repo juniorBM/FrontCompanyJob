@@ -1,0 +1,48 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>job</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="onSubmit(y)" #jobForm="ngForm">
+    <ion-list >
+      <ion-item>
+        <ion-label floating>Titulo</ion-label>
+        <ion-input #title="ngModel" name="title" [(ngModel)]="job.title" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Descrição</ion-label>
+        <ion-textarea #description="ngModel" name="description" [(ngModel)]="job.description" type="text" required></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Local</ion-label>
+        <ion-input #local="ngModel" name="local" [(ngModel)]="job.local" type="text" required></ion-input>
+      </ion-item>
+        <ion-list radio-group>
+          <ion-list-header>
+            Remoto
+          </ion-list-header>
+
+          <ion-item>
+            <ion-label>Sim</ion-label>
+            <ion-radio #y checked="true" value="sim"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Não</ion-label>
+            <ion-radio value="nao"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Empresas</ion-label>
+            <ion-select name="company_id" [(ngModel)]="job.company_id">
+              <ion-option *ngFor="let c of companies" [value]="c.id">{{c.name}}</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      <button ion-button type="submit" block>Salvar</button>
+    </ion-list>
+  </form>
+</ion-content>

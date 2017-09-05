@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Company</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="onSubmit()" #companyForm="ngForm">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Nome</ion-label>
+        <ion-input #name="ngModel" name="name" required [(ngModel)]="company.name" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>E-mail</ion-label>
+        <ion-input #email="ngModel" name="email" required [(ngModel)]="company.email" type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Website</ion-label>
+        <ion-input #website="ngModel" name="website" [(ngModel)]="company.website" type="text"></ion-input>
+      </ion-item>
+      <button ion-button type="submit" block>Salvar</button>
+    </ion-list>
+  </form>
+</ion-content>
